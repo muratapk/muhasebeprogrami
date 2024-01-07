@@ -1,0 +1,29 @@
+﻿@model List<muhasebeprogrami.Models.Sehir>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<a class="btn btn-primary" asp-action="Create" asp-controller="Sehir">Ekle</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">İlin Adı</th>
+            <th scope="col">Düzelt</th>
+            <th scope="col">Silme</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach( var item in Model)
+        {
+        <tr>
+            <th scope="row">1</th>
+            <td>@item.Sehir_Adi</td>
+            <td><a class="btn btn-warning" asp-action="Edit" asp-controller="Sehir" asp-route-id="@item.Sehir_Id">Düzelt</a></td>
+            <td><a class="btn btn-danger" href="/Sehir/Delete/@item.Sehir_Id">Silme</a></td>
+        </tr>
+        }
+      
+    </tbody>
+</table>

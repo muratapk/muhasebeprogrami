@@ -1,0 +1,30 @@
+﻿@model List<muhasebeprogrami.Models.Unvan>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<a class="btn btn-primary" asp-action="Create" asp-controller="Unvan">Ekle</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Ünvan Adı</th>
+            <th scope="col">Düzelt</th>
+            <th scope="col">Silme</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">1</th>
+                <td>@item.Unvan_Adi</td>
+                <td><a class="btn btn-warning" asp-action="Edit" asp-controller="Unvan" asp-route-id="@item.Unvan_Id">Düzelt</a></td>
+                <td><a class="btn btn-danger" href="/Unvan/Delete/@item.Unvan_Id">Silme</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+﻿@model muhasebeprogrami.Models.Unvan
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+
+<h1>Edit</h1>
+
+<form method="post" action="Edit">
+    <div class="form-group row">
+        <input type="hidden" asp-for="Unvan_Id" />
+        <label for="text" class="col-4 col-form-label">İlin Adı</label>
+        <div class="col-8">
+            <input id="text" asp-for="Unvan_Adi" type="text" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">Düzelt</button>
+        </div>
+    </div>
+</form>
